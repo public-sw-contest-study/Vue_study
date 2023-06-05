@@ -1,17 +1,11 @@
 <template>
   <div>
-    <h1>hello {{ animal }}</h1>
-    <h2>원숭이는 {{ food }}바나나를 좋아합니다.</h2>
-    <h3 v-text="food"></h3>
-    <input type="text" v-model="food" /><!--food라고 만들어둔 함수를 사용-->
-    <div>{{ alertMessage }}</div>
-    <div v-html="alertMessage"></div>
-    <img v-bind:src="imageSource" alt="random" /><!--바인드 생략 가능 문법으로 만들때 사용-->
-    <a :href="food">{{food}}</a>
-    <hr />
-    <h2 class="red">원숭이는 {{food}}를 좋아합니다</h2>
-    <h2 v-bind:class="{ red: food==='apple',orange: food==='rice' }">원숭이는 {{food}}를 좋아합니다</h2><!--검색창에 애플이라고하면 바뀜-->
-
+    <h3>당신의 나이는 {{age}}입니다.</h3>
+    <h3 v-if="age > 18">당신은 어른입니다.</h3>
+    <h3 v-else-if="age > 13 && age <= 18">당신은 청소년 입니다.</h3>
+    <h3 v-else>당신은 어른이 아닙니다</h3>
+    <!--if문 -->
+    
   </div>
 </template>
 
@@ -20,12 +14,8 @@ export default {
   name: 'App',
   data(){
     return {
-      animal: "Monkey",
-      food: "banana",
-      alertMessage: "<h2>rudrh!!!</h2>",
-      imageSource: "https://placeimg.com/100/100/any",
-      naverUrl: "https://www.naver.com",
-    }
+      age: 15
+    };
   }
 }
 </script>
@@ -38,11 +28,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-.orange {
-  color: orange;
-}
-.red {
-  color: red;
 }
 </style>
