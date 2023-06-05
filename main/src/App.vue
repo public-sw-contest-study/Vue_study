@@ -3,13 +3,8 @@
     <h2 v-if="display">see</h2>
     <h2 v-show="display">see!</h2>
     <h2>{{ animals }}</h2>
-    <h2 v-for="(animal,index) in animals" :key="index">{{ animal }} index : {{ index }}</h2>
-
-    <ul>
-      <li v-for="(user,index) in users" :key="index">
-        {{ user.name }}  {{ user.job }}
-      </li>
-    </ul>
+    <h2 v-for="(animal,index) in animals" :key="index">
+    <span v-if="animal !== 'rat'">{{ animal }} index : {{ index }}</span></h2>
   </div>
 </template>
 
